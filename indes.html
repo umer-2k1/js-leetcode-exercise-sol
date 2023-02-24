@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welocme to Js Hell</h1>
+    <p id="para"></p>
+
+    <script>
+        let para = document.querySelector("#para")
+        let age = prompt("What is your Age? ")
+        console.log(age)
+
+let age1= Number(age)
+switch (age1) {
+    case 12:
+        console.log("Age is 12")
+        para.innerHTML = "Age is 12"
+        break;
+        case 13:
+        console.log("Age is 13")
+        para.innerHTML = "Age is 13"
+        break;
+        case 14:
+        console.log("Age is 14")
+        para.innerHTML = "Age is 14"
+        break;
+        case 15:
+        console.log("Age is 15")
+        para.innerHTML = "Age is 15"
+        break;
+
+        case 16:
+        console.log("Age is 16")
+        para.innerHTML = "Age is 16"
+        break;
+
+        
+
+    default:
+        console.log("Age is not special")
+        para.innerHTML = "Age is not special"
+        break;
+}
+
+
+    </script>
+</body>
+</html>
