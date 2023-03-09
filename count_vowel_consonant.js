@@ -10,3 +10,17 @@ console.log(`Vowel count: ${mystr.match(countVowel).length}`)
 console.log(`Consonant count: ${mystr.match(countConsonant).length}`)
 
 // method2: using for of loop
+let vowels = ["a", "e", "i", "o", "u"]
+let vowelCounts = 0;
+let consonantCounts = 0;
+for (let char of mystr.toLowerCase()) {
+    if (vowels.includes(char)) {
+        vowelCounts++
+    }
+    else{
+        consonantCounts++
+    }
+}
+console.log(`Vowel count: ${vowelCounts}`)
+console.log(`Consonant count: ${consonantCounts}`)
+
