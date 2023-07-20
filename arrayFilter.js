@@ -27,4 +27,5 @@ console.table(a)
 // // let a = arr.sort((a,b)=> a-b)
 
 // // console.log(a)
-// console.log(filteredData1)
+// console.log(1)
+filteredData
