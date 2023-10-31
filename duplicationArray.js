@@ -1,12 +1,10 @@
 // ways to remove duplicates element in an Array and arrange them in ascending and escending order in Javascript
 
 // ********* Using Filter method *********
-// let arr = [2,3,21,3,14,11,44,4,1,2,1,4,22,3]
-let arr = [1,1,2]
-let noDuplication = arr.filter((ele,index)=> arr.indexOf(ele)== index
-)
-console.log(noDuplication)
-
+let arr = [2, 3, 21, 3, 14, 11, 44, 4, 1, 2, 1, 4, 22, 3];
+// let arr = [1,1,2]
+let noDuplication = arr.filter((ele, index) => arr.indexOf(ele) == index);
+console.log(noDuplication);
 
 // ********* Using ForEach loop *********
 // array1 = [];
