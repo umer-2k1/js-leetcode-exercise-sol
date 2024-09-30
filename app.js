@@ -37,28 +37,25 @@ printPrimeNumbers(1, 20);
 // Checks divisibility from 5 up to the square root of the number, using a step of 6 to skip even numbers and multiples of 3.
 
 function isPrime(num) {
-  if (num <= 1) return false;
-  if (num <= 3) return true;
+  if (num <= 1 || num % 2 === 0) return false;
+  if (num === 2) return true;
 
-  if (num % 2 === 0 || num % 3 === 0) return false;
+  for (let i = 3; i <= Math.sqrt(num); i += 2) {
+    if (num % i === 0) return false;
+  }
 
-  for (let i = 0; i * i <= num; i += 6) {
-    if (num % i === 0 || num % (i + 2) === 0) {
-      return false;
+  return true;
+}
+// isPrime(5);
+
+function printPrimesInRange(start, end) {
+  for (let i = start; i <= end; i++) {
+    if (isPrime(i)) {
+      console.log(i);
     }
-    return true;
   }
 }
-isPrime(24);
-
-// function printPrimesInRange(start, end) {
-//   for (let i = start; i <= end; i++) {
-//     if (isPrime(i)) {
-//       console.log(i);
-//     }
-//   }
-// }
-// printPrimesInRange(1, 40);
+printPrimesInRange(1, 40);
 
 const data = [
   { language: "JavaScript" },
@@ -80,6 +77,8 @@ const data = [
 const convertToCountFormat = (arr) => {
   return arr.reduce((acc, curr) => {
     const existing = acc.find((item) => item.language === curr.language);
+    console.log("existing.....", existing);
+
     if (existing) {
       existing.count += 1;
     } else {
@@ -91,3 +90,24 @@ const convertToCountFormat = (arr) => {
 
 const result = convertToCountFormat(data);
 console.log(result);
+
+function countElement(arr) {
+  const result = [];
+  arr.forEach((curr) => {
+    const exist = result.find((item) => item.element === curr);
+    if (exist) {
+      exist.count += 1;
+    } else {
+      result.push({ element: curr, count: 1 });
+    }
+  });
+
+  const sortedResult = result.sort((a, b) => b.count - a.count);
+
+  console.log("sortedResult", sortedResult[0]);
+
+  return result;
+}
+
+const arr = [2, 3, 6, 2, 4, 2, 4, 3];
+console.log(countElement(arr));
